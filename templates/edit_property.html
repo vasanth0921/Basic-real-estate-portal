@@ -1,0 +1,222 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+<style>
+    body {
+        background-color: #0cb8b6
+    }
+    
+    .content {
+        padding: 7rem 0;
+    }
+    
+    .form-control {
+        border: none;
+        border-bottom: 1px solid #ccc;
+        padding-left: 0;
+        padding-right: 0;
+        border-radius: 0;
+        background: none;
+        font-size: medium;
+    }
+    
+    .form-control:active,
+    .form-control:focus {
+        outline: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        border-color: #000;
+    }
+    
+    .col-form-label {
+        color: #000;
+        font-size: 13px;
+    }
+    
+    .btn,
+    .form-control,
+    .custom-select {
+        height: 45px;
+    }
+    
+    .custom-select:active,
+    .custom-select:focus {
+        outline: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        border-color: #000;
+    }
+    
+    .btn {
+        border: none;
+        border-radius: 0;
+        font-size: 12px;
+        letter-spacing: .2rem;
+        text-transform: uppercase;
+    }
+    
+    .btn.btn-primary {
+        background: #0cb8b6;
+        color: #fff;
+        padding: 15px 20px;
+    }
+    
+    .btn:hover {
+        color: #fff;
+    }
+    
+    .btn:active,
+    .btn:focus {
+        outline: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+    
+    .contact-wrap .col-form-label {
+        font-size: 14px;
+        color: #b3b3b3;
+        margin: 0 0 10px 0;
+        display: inline-block;
+        padding: 0;
+    }
+    
+    .contact-wrap .form,
+    .contact-wrap .contact-info {
+        padding: 40px;
+    }
+    
+    .contact-wrap .contact-info {
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    .contact-wrap .contact-info ul li {
+        margin-bottom: 15px;
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    .contact-wrap .contact-info ul li .wrap-icon {
+        font-size: 20px;
+        color: rgb(255, 255, 255);
+        margin-top: 5px;
+    }
+    
+    .contact-wrap .form {
+        background: #fff;
+    }
+    
+    .contact-wrap .form h3 {
+        color: #0cb8b6;
+        font-size: 20px;
+        margin-bottom: 30px;
+        font-weight: bold;
+    }
+    
+    .contact-wrap .contact-info {
+        height: 100vh;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+    
+    .contact-wrap .contact-info a {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+    
+    @media (max-width: 1199.98px) {
+        .contact-wrap .contact-info {
+            height: 400px !important;
+        }
+    }
+    
+    .contact-wrap .contact-info h3 {
+        color: #0cb8b6;
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+    
+    .container {
+        justify-content: center;
+        align-items: center;
+    }
+    
+    h3 {
+        font-weight: bold;
+    }
+    
+    label {
+        font-size: large
+    }
+    
+    .form {
+        margin-left: 28%;
+        margin-right: -30%
+    }
+</style>
+
+<div class="content">
+
+    <div class="container">
+        <div class="row align-items-stretch no-gutters contact-wrap">
+            <div class="col-md-8">
+                <div class="form">
+                    <h3 align="center">EDIT THE PROPERTY DETAILS</h3><br>
+                    <form class="" action="\edit_property" method="post" autocomplete="off">
+                        <div class="row">
+
+
+                            <div class="col-md-6 form-group mb-5">
+                                <label for="Name">Full Name</label>
+                                <input value="{{ prop[1] }}" class="form-control" name="Name" id="Name" type="text" placeholder="Enter Owner Name" autocomplete="off" required />
+                            </div>
+
+                            <div class="col-md-6 form-group mb-5">
+                                <label for="Contact">Contact</label>
+                                <input value="{{ prop[2] }}" class="form-control" name="Contact" id="Contact" type="text" placeholder="Enter Owner Contact" autocomplete="off" required />
+                            </div>
+                            <div class="col-md-6 form-group mb-5">
+                                <label for="address">Address</label>
+                                <input value="{{ prop[3] }}" class="form-control" name="address" id="address" type="text" placeholder="Enter Address" autocomplete="off" required />
+                            </div>
+                            <div class="col-md-6 form-group mb-5">
+                                <label for="city">City</label>
+                                <input value="{{ prop[4] }}" class="form-control" name="city" id="city" type="text" placeholder="Enter City" autocomplete="off" required />
+                            </div>
+                            <div class="col-md-6 form-group mb-5">
+                                <label for="zipcode">Zip Code</label>
+                                <input value="{{ prop[5] }}" class="form-control" name="zipcode" id="zipcode" type="text" placeholder="Enter Zip Code " autocomplete="off" required />
+                            </div>
+                            <div class="col-md-6 form-group mb-5">
+                                <label for="kind">Kind</label>
+                                <input value="{{ prop[6] }}" class="form-control" list="kind" name="kind" id="kind" type="text" placeholder="Enter kind of property" autocomplete="off" required />
+                            </div>
+                            <div class="col-md-6 form-group mb-5">
+                                <label for="area">Area</label>
+                                <input value="{{ prop[7] }}" class="form-control" name="area" id="area" type="number" placeholder="Ente Area" autocomplete="off" required />
+                            </div>
+                            <div class="col-md-6 form-group mb-5">
+                                <label for="valuation">Valuation</label>
+                                <input value="{{ prop[8] }}" class="form-control" name="valuation" id="valuation" type="number" step="0.01" placeholder="Enter Valuation" autocomplete="off" required />
+                            </div>
+                            <div class="col-md-6 form-group mb-5">
+                                <label for="status">Status</label>
+                                <input value="{{ prop[9] }}" class="form-control" name="status" id="status" type="number" min="0" max="1" placeholder="Enter Status" autocomplete="off" required />
+                            </div>
+
+
+                            <div class="col-md-6 form-group mb-5 ">
+                                <br>
+                                <button type="submit" name="edit" value="{{ prop[0] }}" class="btn btn-primary">SUBMIT</button>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
